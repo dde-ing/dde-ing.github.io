@@ -77,7 +77,34 @@ const test2 = () => {
     }
     showAnswer(11, s);
 
+
+// 데이터
+// <여기에 class를 작성하세요.>
+
+const x = new Wizard(545, 210, 10);
+console.log(x.health, x.mana, x.armor);
+x.attack();
+
+
+// 출력
+// 545 210 10
+// 파이어볼
+
 }
+
+
+class Wizard{
+    constructor (h, m, a){
+        this.health = h;
+        this.mana = m;
+        this.armor = a;
+    }
+
+    attack = () =>{
+        console.log('파이어볼');
+    }
+}
+
 
 const showAnswer = (num, answer) => {
 // function showAnswer(num, answer){
