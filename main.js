@@ -1,6 +1,7 @@
 window.onload = function() {
     test1();
     test2();
+    test3();
 };
 
 const test1 = () =>{
@@ -78,30 +79,87 @@ const test2 = () => {
     showAnswer(11, s);
 
 
-// 데이터
-// <여기에 class를 작성하세요.>
+    // 12번
+    // 함수 안에 클래스를 작성해도 되나봄?
+    class Wizard{
+        constructor (h, m, a){
+            this.health = h;
+            this.mana = m;
+            this.armor = a;
+        }
 
-const x = new Wizard(545, 210, 10);
-console.log(x.health, x.mana, x.armor);
-x.attack();
+        attack = () =>{
+            return '파이어볼';
+        }
+    }
+    const x = new Wizard(545, 210, 10);
+    let attack = x.attack();
+    showAnswer(12, x.health+"/"+x.mana+"/"+x.armor+"/"+attack);
 
+    // 13번
+    let universe = ['수성','금성','지구','화성','목성','토성','천왕성','해왕성','명왕성'];
+    let universe_s = 3;
+    showAnswer(13, universe[universe_s-1]);
 
-// 출력
-// 545 210 10
-// 파이어볼
+    // 14번
+    let num14 = 123151652;
+    if(num14 % 3 === 0) showAnswer(14, '짝');
+    else showAnswer(14, num14);
 
+    // 15번
+    let num15 = '길동쓰';
+    showAnswer(15, `안냐세요 저는 ${num15}임니다.`); // 백틱: 중괄호 표현식 가능 -> 템플릿 리터럴 이라고 함
+
+    // 16번
+    let num16 = '빱라임씬';
+    let arr_num16 = num16.split("");
+    arr_num16 = arr_num16.reverse();
+    showAnswer(16, arr_num16.join(""));
+
+    // 18번
+    let num18 = '20 30 40';
+    let arr_num18 = num18.split(" ");
+    let sum = 0;
+    for(let i=0; i<arr_num18.length; i++){
+        sum += Number(arr_num18[i]);
+    }
+    let avg_num18 = sum / arr_num18.length;
+    showAnswer(18, avg_num18);
+
+    // 19번
+    let num19 = "2 5";
+    let arr_num19 = num19.split(" ");
+    let pow_num19 = Math.pow(arr_num19[0],arr_num19[1]);
+    showAnswer(19, pow_num19);
+
+    // 20번
+    let num20 = "10 2";
+    let arr_num20 = num20.split(" ");
+    // floor: 내림
+    // ceil : 올림
+    // round: 반올림
+    let ahrt_num20 = Math.floor(arr_num20[0] / arr_num20[1]);
+    let skajwl_num20 = arr_num20[0] % arr_num20[1];
+    showAnswer(20, `${ahrt_num20} ${skajwl_num20}`);
 }
 
+const test3 = () => {
+    // 24번
+    let num24 = 'mary';
+    showAnswer(24, num24.toUpperCase());
 
-class Wizard{
-    constructor (h, m, a){
-        this.health = h;
-        this.mana = m;
-        this.armor = a;
+    // 25번
+    let num25 = '3';
+    const circle = (r) => {
+        return r*r*3.14;
     }
+    let circle_num25 = circle(num25);
+    showAnswer(25, circle_num25);
 
-    attack = () =>{
-        console.log('파이어볼');
+    // 26번
+    let num26 = '';
+    let solar = {
+        // 'Mercury',
     }
 }
 
