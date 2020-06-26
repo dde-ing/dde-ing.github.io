@@ -2,6 +2,7 @@ window.onload = function() {
     test1();
     test2();
     test3();
+    test4_1();
 };
 
 const test1 = () =>{
@@ -161,6 +162,25 @@ const test3 = () => {
     let solar = {
         // 'Mercury',
     }
+}
+
+const test4_1 = () => {
+    // 35번
+    function one(n){
+        function two(m){
+            return Math.pow(n,m);
+        }
+        return two;
+    }
+    
+    const a = one(2);
+    const b = one(3);
+    const c = one(4);
+    console.log(a);
+    
+    console.log(a(10));
+    console.log(b(10));
+    console.log(c(10));
 }
 
 
