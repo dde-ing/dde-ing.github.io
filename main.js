@@ -247,8 +247,8 @@ const test4 = () => {
     
     // 35번
     function one(n){
-        function two(){
-            //pass
+        function two(m){
+            return Math.pow(n,m);
         }
         return two;
     }
@@ -256,13 +256,9 @@ const test4 = () => {
     const a = one(2);
     const b = one(3);
     const c = one(4);
-
-    console.log(a(10));
-    console.log(b(10));
-    console.log(c(10));
+    showAnswer(35, a(10));
     
 }
-
 
 const showAnswer = (num, answer) => {
 // function showAnswer(num, answer){
