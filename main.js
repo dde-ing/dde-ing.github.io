@@ -258,6 +258,41 @@ const test4 = () => {
     const c = one(4);
     showAnswer(35, a(10));
     
+    // 36번
+    let num36 = '3';
+    let as_num36 = '';
+    for(let i=1; i<=9; i++){
+        as_num36 += (i*num36)+' ';
+    }
+    showAnswer(36, as_num36);
+    
+    // 37번 // 어려워
+    let num37 = '원범 원범 혜원 혜원 혜원 혜원 유진 유진';
+    let as_num37 = 0;
+    let arr_num37 = num37.split(' ');
+    let arr_num37_1 = [];
+    
+    let i = 0;
+    do {
+        if( typeof arr_num37_1[arr_num37[i]] != 'undefined' ) {
+            arr_num37_1[arr_num37[i]]++;
+        }
+        else {
+            arr_num37_1[arr_num37[i]] = 1;
+        }
+        
+        i++;
+    }while(i<arr_num37.length);
+
+    let as_num37_1 = '';
+    for(let idx in arr_num37_1){
+        if(arr_num37_1[idx] > as_num37){
+            as_num37_1 = idx;
+            as_num37 = arr_num37_1[idx];
+        }
+    }
+    showAnswer(37, `${as_num37_1}(이)가 ${as_num37}표로 당선됨`);
+
 }
 
 const showAnswer = (num, answer) => {
