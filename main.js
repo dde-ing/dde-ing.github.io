@@ -2,6 +2,7 @@ window.onload = function() {
     test1();
     test2();
     test3();
+    test4();
 };
 
 const test1 = () =>{
@@ -157,10 +158,109 @@ const test3 = () => {
     showAnswer(25, circle_num25);
 
     // 26번
-    let num26 = '';
+    let num26 = '화성';
     let solar = {
-        // 'Mercury',
+        '수성' : 'Mercury',
+        '금성' : 'Vinus',
+        '지구' : 'Earth',
+        '화성' : 'Mars',
+        '목성' : 'Jupiter',
+        '토성' : 'Saturn',
+        '천왕성' : 'Uranus',
+        '해왕성' : 'Neptune',
+    };
+    showAnswer(26, solar[num26]);
+
+    // 27번
+    let num27_1 = 'Yujin Hyewon';
+    let num27_2 = '70 100';
+    let arr_num27_1 = num27_1.split(" ");
+    let arr_num27_2 = num27_2.split(" ");
+    // let obj_num27 = new Object();
+    let obj_num27 = {}; // 객체 리터럴로 하는 게 좋음 // Object는 혹시 모르게 오버라이딩 된 Object가 생성 될 수도 있음
+    obj_num27[arr_num27_1[0]] = arr_num27_2[0];
+    obj_num27[arr_num27_1[1]] = arr_num27_2[1];
+    showAnswer(27, JSON.stringify(obj_num27));
+
+    // 28번
+    let num28 = 'Javascript';
+    let as_num28 = '<br>';
+    arr_num28 = num28; // 엥 굳이 안 잘라도 되네
+    for(let i=0;i<arr_num28.length-1;i++){
+        as_num28 += `${arr_num28[i]} ${arr_num28[i+1]} <br>`;
     }
+    showAnswer(28, as_num28);
+
+    // 29번
+    let num29 = 'a';
+    let as_num29 = '';
+    if(num29.toUpperCase() === num29) {
+        as_num29 = 'YES';
+    }
+    else {
+        as_num29 = 'NO';
+    }
+    showAnswer(29, as_num29);
+
+    // 30번
+    let num30 = 'pineapple is yummy';
+    let num30_2 = 'apple';
+    let as_num30 = num30.indexOf(num30_2);
+    showAnswer(30, as_num30);
+}
+
+const test4 = () => {
+    // 32번
+    let num32 = '안냥하새요. 저는. 밥라임신을. 기다리고. 잇슴니다. 허ㅏ하';
+    let as_num32 = num32.split(" ").length;
+    showAnswer(32, as_num32);
+
+    // 33번
+    let num33 = '0 3 2 9 0 2 1 0';
+    let arr_num33 = num33.split(' ');
+    let as_num33 = '';
+    arr_num33.reverse(); 
+    for(let i=0;i<arr_num33.length; i++){
+        as_num33 += arr_num33[i];
+    }
+    showAnswer(33, as_num33);
+
+    // 34번
+    let num34 = '96 99 91 94 94';
+    // let num34 = '91 92 93 94 95';
+    let arr_num34 = num34.split(' '); // [96] [99] [91] [97] [94]
+    let tmp = arr_num34.slice();
+    arr_num34.sort(function(a,b){
+        return a-b;
+    });
+    // sort에 콜백함수 안 쓰면 아스키코드 순으로 정렬됨 - 숫자가 문자열로 인식될 수 있음
+    // a-b 는 숫자 오름차순 정렬 // b-a는 내림차순
+
+    let as_num34 = '';
+    if(tmp.join('') == arr_num34.join('')){
+        as_num34 = 'YES';
+    }
+    else {
+        as_num34 = 'NO';
+    }
+    showAnswer(34, as_num34);
+    
+    // 35번
+    function one(n){
+        function two(){
+            //pass
+        }
+        return two;
+    }
+    
+    const a = one(2);
+    const b = one(3);
+    const c = one(4);
+
+    console.log(a(10));
+    console.log(b(10));
+    console.log(c(10));
+    
 }
 
 
